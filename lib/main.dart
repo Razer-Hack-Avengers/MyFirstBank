@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Main/Social.dart';
 
 void main() => runApp(MyApp());
 
@@ -80,7 +81,10 @@ class _LoginPageState extends State<LoginPage>
                         padding: const EdgeInsets.only(top:20.0),
                       ),
                       new MaterialButton(
-                        onPressed: () => {}, 
+                        onPressed: () => {
+                          // Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => UserFeedPage()), (Route<dynamic> route) => false)
+                          Navigator.push(context, new MaterialPageRoute(builder: (context) => Social(), maintainState: false))
+                        }, 
                         color: Colors.teal,
                         textColor: Colors.white,
                         child: new Text("Login"),
